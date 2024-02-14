@@ -30,6 +30,15 @@ return {
   },
 
   {
+    'toppair/reach.nvim',
+    config = function ()
+      require('reach').setup({
+        notifications = true
+      })
+    end
+  },
+
+  {
     "folke/twilight.nvim",
   },
 
@@ -49,6 +58,12 @@ return {
   },
 
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
+
+  {
     "amitds1997/remote-nvim.nvim",
     version = "*", -- Pin to GitHub releases
     dependencies = {
@@ -62,6 +77,14 @@ return {
   {
     'm-demare/attempt.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
+    config = function ()
+      require('attempt').setup{
+        ext_options = { 'lua', 'js', 'py', 'cpp', 'c', 'java', 'rs', 'sh' },
+        run = {
+          py = { 'w !python3' },      -- Either table of strings or lua functions
+        }
+      }
+    end
   },
 
   {

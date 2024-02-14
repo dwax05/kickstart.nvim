@@ -64,7 +64,14 @@ require "lsp-setup"
 -- [[ Configure nvim-cmp ]]
 require "cmp-setup"
 
+-- [[ Colorscheme ]]
+require "colorscheme"
+
 -- [[ Set Up Harpoon ]]
 require "custom.harpoon"
+
+-- [[ Set up Attempt ]]
+require "custom.attempt"
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

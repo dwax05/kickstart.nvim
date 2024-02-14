@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>bC', ":BufferCloseAllButCurrentOrPinned<cr>", { des
 vim.keymap.set('n', '<leader>bc', ":BufferClose<cr>", { desc = "[C]lose [B]uffer" })
 vim.keymap.set('n', '<leader>bm', ":BufferPin<cr>", { desc = "Pin [B]uffer" })
 vim.keymap.set('n', '<leader>br', ":BufferRestore<cr>", { desc = "[R]estore [B]uffer" })
+vim.keymap.set('n', '<leader>bR', ":ReachOpen buffers<cr>", { desc = "[R]each [B]uffers" })
 -- Order Buffers
 vim.keymap.set('n', '<leader>bod', ":BufferOrderByDirectory<cr>", { desc = "[O]rder by [D]irectory" })
 vim.keymap.set('n', '<leader>bol', ":BufferOrderByLanguage<cr>", { desc = "[O]rder by [L]anguage" })
@@ -34,7 +35,9 @@ vim.keymap.set('n', '<M-x>t', ':ToggleTerm direction=tab<cr>', { desc = "[T]ermi
 
 vim.keymap.set("n", "<leader>rr", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]ename over line" })
 vim.keymap.set("n", "<leader>rR", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]ename over file" })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = false })
+
+vim.keymap.set("n", "<leader>aa", "<cmd>Alpha<CR>", { desc = "Start Page", silent = true })
 
 -- document existing key chains
 require('which-key').register {
