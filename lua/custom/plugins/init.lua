@@ -12,9 +12,40 @@ return {
   },
 
   {
+    'stevearc/oil.nvim',
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+      vim.keymap.set("n", "<leader>.", ":Oil<cr>", { desc = "Browse Dir" })
+    },
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+
+  {
+    "folke/twilight.nvim",
+  },
+
+  {
     'smoka7/hop.nvim',
     version = "*",
     opts = {},
+  },
+
+  {
+    "sontungexpt/witch",
+    priority = 1000,
+    lazy = false,
+    config = function(_, opts)
+      require("witch").setup(opts)
+    end,
   },
 
   {
