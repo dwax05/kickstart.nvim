@@ -13,6 +13,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
 -- [[ Buffers ]]
+vim.keymap.set('n', '<C-n>', ":bn<cr>", { desc = "[N]ext [B]uffer" })
+vim.keymap.set('n', '<C-p>', ":bp<cr>", { desc = "[P]revious [Buffer" })
 vim.keymap.set('n', '<leader>bn', ":bn<cr>", { desc = "[N]ext [B]uffer" })
 vim.keymap.set('n', '<leader>bp', ":bp<cr>", { desc = "[P]revious [Buffer" })
 vim.keymap.set('n', '<leader>bC', ":BufferCloseAllButCurrentOrPinned<cr>", { desc = "[C]lose All [B]uffers" })
@@ -57,5 +59,4 @@ require('which-key').register({
   ['<leader>'] = { name = 'VISUAL <leader>' },
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
-
 
