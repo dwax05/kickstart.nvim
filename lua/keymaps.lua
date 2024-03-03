@@ -4,6 +4,12 @@
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- Switch '0' and '^'
+vim.keymap.set({ 'n', 'v' }, '0', '^', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '^', '0', { silent = true })
+
+vim.keymap.set('n', '<leader>tt', ':TransparentToggle<cr>', { desc = "toggle transparency", silent = true })
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -41,6 +47,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file exe
 
 vim.keymap.set("n", "<leader>aa", "<cmd>Alpha<CR>", { desc = "Start Page", silent = true })
 
+vim.keymap.set("n", "<M-C-n>", "<cmd>Scratch<cr>", { desc = "Scratch File", silent = true })
+vim.keymap.set("n", "<M-C-o>", "<cmd>ScratchOpen<cr>", { desc = "Scratch File", silent = true })
+
 -- document existing key chains
 require('which-key').register {
   ['<leader>b'] = { name = '[B]uffers', o = "[O]rder",_ = 'which_key_ignore' },
@@ -59,4 +68,3 @@ require('which-key').register({
   ['<leader>'] = { name = 'VISUAL <leader>' },
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
-

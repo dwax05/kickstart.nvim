@@ -1,8 +1,7 @@
 local harpoon = require("harpoon")
-local extensions = require("harpoon.extensions");
 
 -- REQUIRED
-harpoon:setup()
+harpoon:setup({})
 -- REQUIRED
 
 vim.keymap.set("n", "<leader>m", function() harpoon:list():append() end, { desc = "Harpoon [M]ark" })

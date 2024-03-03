@@ -14,3 +14,10 @@ map('n', '<leader>ad', attempt.delete_buf, "[D]elete [A]ttempt")        -- delet
 map('n', '<leader>ac', attempt.rename_buf, "Rename [A]ttempt")        -- rename attempt from current buffer
 map('n', '<leader>al', ':Telescope attempt<cr>', "Te[l]escope [A]ttempt")       -- search through attempts
 --or: map('n', '<leader>al', attempt.open_select) -- use ui.select instead of telescope
+
+attempt.setup{
+    ext_options = { 'lua', 'js', 'py', 'cpp', 'c', 'java', 'rs', 'sh' },
+    run = {
+        py = { 'w !python3' },
+    }
+}

@@ -12,6 +12,17 @@ return {
   },
 
   {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  },
+
+  {
     'stevearc/oil.nvim',
     opts = {
       view_options = {
@@ -24,9 +35,25 @@ return {
   },
 
   {
+    "ahmedkhalf/lsp-rooter.nvim",
+    config = function()
+      require("lsp-rooter").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  },
+
+  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
+  },
+
+  {
+    "LintaoAmons/scratch.nvim",
+    event = "VeryLazy",
   },
 
   {
@@ -39,7 +66,7 @@ return {
   },
 
   {
-    "folke/twilight.nvim",
+    'Konfekt/vim-CtrlXA'
   },
 
   {
@@ -74,21 +101,6 @@ return {
   },
 
   {
-    "sontungexpt/witch",
-    priority = 1000,
-    lazy = false,
-    config = function(_, opts)
-      require("witch").setup(opts)
-    end,
-  },
-
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-  },
-
-  {
     "amitds1997/remote-nvim.nvim",
     version = "*", -- Pin to GitHub releases
     dependencies = {
@@ -100,16 +112,12 @@ return {
   },
 
   {
+    "lervag/vimtex"
+  },
+
+  {
     'm-demare/attempt.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
-    config = function ()
-      require('attempt').setup{
-        ext_options = { 'lua', 'js', 'py', 'cpp', 'c', 'java', 'rs', 'sh' },
-        run = {
-          py = { 'w !python3' },      -- Either table of strings or lua functions
-        }
-      }
-    end
   },
 
   {
@@ -152,5 +160,15 @@ return {
       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
+  },
+
+  {
+    "folke/twilight.nvim",
+    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    "rebelot/kanagawa.nvim",
+    "sontungexpt/witch",
+    "rose-pine/neovim",
+    "ellisonleao/gruvbox.nvim",
   },
 }
